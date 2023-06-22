@@ -1,0 +1,12 @@
+2023-06-21 16:26:36,365 INFO  StudentController:35 - [] [get message] info message
+2023-06-21 16:26:36,366 DEBUG StudentController:36 - [] [get message] debug message
+2023-06-21 16:26:36,367 WARN  StudentController:37 - [] [get message] warn message
+2023-06-21 16:26:36,368 ERROR StudentController:38 - [] [get message] error messag
+2023-06-21 17:56:01,431 INFO  StudentController:35 - [] [get message] info message
+2023-06-21 17:56:01,433 DEBUG StudentController:36 - [] [get message] debug message
+2023-06-21 17:56:01,434 WARN  StudentController:37 - [] [get message] warn message
+2023-06-21 17:56:01,435 ERROR StudentController:38 - [] [get message] error messag
+2023-06-21 17:57:25,099 INFO  StudentController:35 - [] [get message] info message
+2023-06-21 17:57:25,102 DEBUG StudentController:36 - [] [get message] debug message
+2023-06-21 17:57:25,103 WARN  StudentController:37 - [] [get message] warn message
+2023-06-21 17:57:25,105 ERROR StudentController:38 - [] [get message] error messag

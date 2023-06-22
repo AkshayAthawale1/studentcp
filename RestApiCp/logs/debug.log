@@ -1,0 +1,4 @@
+2023-06-22 09:57:33,703 INFO  StudentController:35 - [] [get message] info message
+2023-06-22 09:57:33,710 DEBUG StudentController:36 - [] [get message] debug message
+2023-06-22 09:57:33,712 WARN  StudentController:37 - [] [get message] warn message
+2023-06-22 09:57:33,713 ERROR StudentController:38 - [] [get message] error messag
