@@ -3,20 +3,18 @@ package cp.student.restapicp.model;
 
 public class Studentvo {
 	
-	private long id;
+	private Long id;
 	private String name;
 	private String email;
 	private String number;
 	
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	
 	public String getName() {
 		return name;
 	}

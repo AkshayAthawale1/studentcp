@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import cp.student.restapicp.customeProperties.CustomeProperties;
 import cp.student.restapicp.domain.Student;
 import cp.student.restapicp.model.Studentvo;
 import cp.student.restapicp.service.StudentSeriveImpl;
@@ -24,45 +25,61 @@ import cp.student.restapicp.service.StudentSeriveImpl;
 @RequestMapping("api/v1/")
 public class StudentController {
 
+//	@Value("${app.name}")
+//	private String appName;
+
 	@Autowired
-	private StudentSeriveImpl studentSeriveImpl;
+	private StudentSeriveImpl studentSerive;
 	
-	Logger logger=LoggerFactory.getLogger(StudentController.class);
-	
-	
-	@GetMapping("hi")
-	public String gt() {
-		logger.info("[get message] info message");
-		logger.debug("[get message] debug message");
-		logger.warn("[get message] warn message");
-		logger.error("[get message] error messag");
-		System.out.println(10/0);
-		return "hello";
-	}
+	@Autowired
+	private CustomeProperties customeProperties;
+
+	Logger logger = LoggerFactory.getLogger(StudentController.class);
 
 	@PostMapping("/student/save")
 	public ResponseEntity<String> saveStudentData(@RequestBody Studentvo studentvo) {
-		studentSeriveImpl.saveStudentData(studentvo);
+		studentSerive.saveStudentData(studentvo);
 		return new ResponseEntity<String>("Record Inserted", HttpStatus.OK);
+	}
+
+	@PostMapping("/student/saveAll")
+	public ResponseEntity<String> saveStudentData(@RequestBody List<Studentvo> listStudent) {
+		studentSerive.saveAllStudent(listStudent);
+		return new ResponseEntity<String>("Inserted List Of Student", HttpStatus.OK);
 	}
 
 	@GetMapping("/student/getallstudents")
 	public List<Student> GetAllStudents() {
-		return studentSeriveImpl.getAllStudentData();
+//		System.out.println("the app name is" + appName);
+		System.out.println("custome properties fb "+customeProperties.getFeedback());
+		System.out.println("custome properties msg "+customeProperties.getMessage());
+
+		return studentSerive.getAllStudentData();
 	}
- 
+
 	@PutMapping("student/update")
 	public ResponseEntity<Student> updateEmplyee(@RequestBody Studentvo studentvo) {
-		studentSeriveImpl.updateStudentById(studentvo);
-		return new ResponseEntity<Student>(HttpStatus.OK); 
+		studentSerive.updateStudentById(studentvo);
+		return new ResponseEntity<Student>(HttpStatus.OK);
 
 	}
 
 	@DeleteMapping("student/delete/{id}")
 	public ResponseEntity<String> deleteStudent(@PathVariable long id) {
-		studentSeriveImpl.deleteStudentbyid(id);
-		return new ResponseEntity<String>("Record deleted successfully", HttpStatus.OK);
+		studentSerive.deleteStudentbyid(id);
+		return new ResponseEntity<String>("Record of id : " + id + " deleted successfully", HttpStatus.OK);
 
 	}
 
+	@PostMapping("/saveOrUpdate")
+	public ResponseEntity<String> saveOrUpdateUser(@RequestBody Studentvo student) {
+		studentSerive.saveOrUpdateStudent(student);
+		return new ResponseEntity<>("Record Inserted", HttpStatus.CREATED);
+	}
+
+	@PostMapping("/saveFromCsv")
+	public ResponseEntity<String> saveCsvData() {
+		studentSerive.saveCsvData();
+		return new ResponseEntity<>("Record Inserted", HttpStatus.CREATED);
+	}
 }

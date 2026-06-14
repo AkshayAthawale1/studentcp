@@ -11,10 +11,14 @@ import cp.student.restapicp.model.Studentvo;
 public interface StudentService {
 
 	void saveStudentData(Studentvo studentvo);
-	
+
+	void saveAllStudent(List<Studentvo> listOfStudent);
+
 	List<Student> getAllStudentData();
+
+	Student updateStudentById(Studentvo studentvo);
 	
-	public Student updateStudentById(Studentvo studentvo);
-	
-	
+	void saveOrUpdateStudent(Studentvo studentvo);
+
+	void saveCsvData();
 }
