@@ -49,7 +49,6 @@ public class StudentController {
 
 	@GetMapping("/student/getallstudents")
 	public List<Student> GetAllStudents() {
-//		System.out.println("the app name is" + appName);
 		System.out.println("custome properties fb "+customeProperties.getFeedback());
 		System.out.println("custome properties msg "+customeProperties.getMessage());
 
