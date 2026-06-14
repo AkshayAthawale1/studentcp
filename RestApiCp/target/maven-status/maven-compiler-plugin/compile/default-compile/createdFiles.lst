@@ -1,8 +1,0 @@
-cp\student\restapicp\domain\Student.class
-cp\student\restapicp\model\Studentvo.class
-cp\student\restapicp\exceptions\StudentNotFountException.class
-cp\student\restapicp\service\StudentSeriveImpl.class
-cp\student\restapicp\service\StudentService.class
-cp\student\restapicp\repository\StudentRepoitory.class
-cp\student\restapicp\controller\StudentController.class
-cp\student\restapicp\RestApiCpApplication.class
